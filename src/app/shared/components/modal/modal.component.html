@@ -1,0 +1,6 @@
+<aside class="app-modal" (keydown)="onKeydown($event)">
+  <div id="app-modal-body"  class="app-modal-body" role="dialog" aria-labelledby="dialog-title">
+      <ng-content></ng-content>
+  </div>
+</aside>
+<div (click)="close()" class="app-modal-background"></div>

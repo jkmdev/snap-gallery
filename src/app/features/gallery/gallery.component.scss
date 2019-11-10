@@ -1,0 +1,34 @@
+@import '../../../styles';
+
+main {
+    color: $font-primary-color;
+    background-color: black;
+    .error {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: black;
+    }
+}
+
+.warning-modal {
+    @extend %font-md;
+    display: flex;
+    align-items: flex-end;
+    height: 65px;
+    padding-left: 40px;
+    padding-right: 40px;
+    hr {
+        width: 150px;
+        margin-left: 50px;
+    }
+    button {
+        height: 80%;
+        background: none;
+        border: 1px solid white;
+        width: 100px;
+        border-bottom: none;
+    }
+}

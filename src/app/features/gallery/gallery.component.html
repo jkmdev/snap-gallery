@@ -1,0 +1,48 @@
+<main id="app-gallery">
+
+    <app-navbar
+        [chapters]="gallery ? gallery.chapters : []"
+        [currentPage]="currentPage"
+        (changeCurrentChapter)="goToChapterAndPage($event)"
+        (changeCurrentPage)="goToPage($event)">
+    </app-navbar>
+
+    <section id="page-content">
+
+        <div *ngIf="error" class="error">
+            <h1>ERROR: {{ error.name }}</h1>
+            <h5>STATUS: {{ error.statusText }}</h5>
+        </div>
+    
+        <div *ngIf="!currentChapter" class="error">
+            <h1>ERROR: Chapter not available</h1>
+        </div>
+    
+        <div *ngIf="currentChapter.pages.length === 0" class="error">
+            <h1>ERROR: Chapter doesn't have pages</h1>
+        </div>
+    
+        <app-carousel 
+            [page]="currentPage"
+            [enableNext]="!atLastPageInGallery()"
+            [enablePrevious]="!atFirstPageInGallery()"
+            (gotoNextPage)="gotoNextPage()"
+            (gotoPreviousPage)="gotoPreviousPage()">
+        </app-carousel>
+
+    <app-text-bar 
+        [text]="currentPage ? currentPage.text : ''">
+    </app-text-bar>
+
+    </section>
+
+</main>
+
+<app-modal id="nsfw-warning-modal">
+    <div class="warning-modal">
+     <p class="warning-text" tabindex="0" role="alert">This next segment contains NSFW content. Continue?</p>
+     <hr>
+     <button (click)="skipPage(nsfwWarningModalId)" class="warning-button">SKIP</button>
+     <button class="warning-button" (click)="closeNSFWModal()">YES</button>
+    </div>
+</app-modal>

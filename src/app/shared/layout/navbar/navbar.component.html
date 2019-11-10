@@ -1,0 +1,48 @@
+<header class="app-navbar fixed-top sticky-top">
+
+  <a id="skip-content-link" tabindex="0" (focus)="setSkipContentStyle()" (focusout)="removeSkipContentStyle()" (keyup.enter)="skipContent()" class="skip-content-link">Skip to main content</a>
+
+  <div id="banner" class="title" role="banner" aria-label="Forever Giants Web Gallery">
+    {{ title | uppercase }}
+  </div>
+
+  <span class="chapter-select">
+    <span>
+        <label for="chapter-number">{{sectionSelectTitle}}</label>
+        <select id="chapter-number" [(ngModel)]="selectedChapter" (change)="updateChapterNumber()">
+          <option *ngFor="let chapter of chapters; let i = index" value='{{chapter.chapterNumber}}'>
+            {{chapter.title}} 
+          </option>
+        </select>    
+    </span>
+    <span>
+        <label for="page-number">{{pageSelectTitle}}</label>    
+        <select id="page-number" [(ngModel)]="selectedPage" (change)="updatePageNumber()">
+          <option *ngFor="let pageNumber of pageNumbers; let i = index" value='{{pageNumber}}'>
+            {{pageNumber}}
+          </option>
+        </select>
+    </span>
+  </span>
+  <span class="link">
+    <button (click)="openAboutModal()" label="About Gallery Button">
+      ABOUT
+    </button>
+  </span>
+
+  
+
+  <app-modal id="about-modal">
+    <div class="about-modal">
+      <button aria-label="Close about modal" class="close-btn crossed" (click)="closeAboutModal()"></button>
+      <h1>{{galleryJSON.aboutTitle}}</h1>
+      <hr>
+      <div class="about-modal-content">
+        <p [innerHTML]="galleryJSON.aboutText"></p>
+        <button (click)="goToFirstPage()">{{galleryJSON.aboutButtonText}}</button>
+      </div>
+    </div>
+  </app-modal>
+
+</header>
+

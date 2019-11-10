@@ -1,0 +1,106 @@
+@import '../../../../../styles';
+
+.carousel {
+
+    display: flex;
+    justify-content: center;
+    z-index: 0;
+    border: none;
+
+    .arrow {
+        height: 100%;
+        width: 90px;
+        padding: 0px;
+        margin: 0px;
+        background-color: black;
+        opacity: 0.3;
+        position: absolute;
+        left: 0;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;   
+        &:hover {
+            opacity: 0.8;
+        }
+        i {
+            color: white;
+        }
+        @media screen and (max-width: $modal-breakpoint) {
+            width: 60px;
+            i {
+                font-size: 60px;
+            }
+        }
+    }
+
+    .right {
+        margin-left: auto;
+        right: 0;
+    }
+
+    .image {
+        width: 100%;
+        display: flex;
+        background-repeat: no-repeat;
+        background-position: center; 
+        background-size: contain; 
+        position: relative;
+        background-color: #2d2d2d;
+    }
+
+    .video-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%; 
+        height: 100%;
+    }
+
+    .youtubeplayer {
+        width: 100%;
+    }
+
+    .video {
+        position: relative;
+        z-index: 0;
+    }
+}
+
+.description {
+    @extend %font-md;
+    height: 500px;
+    width: 100%;
+    margin-bottom: $textbar-height;
+    padding: 0px 120px 0px 120px;
+    background-image: url("https://wallpapercave.com/wp/MTFGvNm.jpg");
+    background-size: cover; 
+    background-position: center; 
+    color: $font-primary-color;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: white;
+    font-weight: bold;
+    text-shadow:1px 1px 10px #000000, 1px 1px 10px #000000;
+    img {
+        flex: 1;
+        height: 90%;
+        padding-right: 50px;
+    }
+    .description-content {
+        flex: 6;
+        background:rgba(0,0,0,0.5);
+        height: 100%;
+        padding: 50px;
+        display: flex;
+        h2 {
+            flex: 1;
+        }
+        p {
+            flex: 5;
+            text-align: center;
+            margin: auto;
+        }
+    }
+}

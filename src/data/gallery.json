@@ -1,0 +1,66 @@
+{
+  "title": "Paul C. Gallery",
+  "aboutTitle": "Paul Chadeisson is Awesome",
+  "aboutText": "So that's why he's the focus of this snap-gallery sample site. :) <br><br> As an example of how this website works, some of his artwork is being displayed here. <br><br> You can select what content you'd like to see from the top navbar, or click the button below to get started from the very first page.",
+  "aboutButtonText": "GET STARTED",
+  "sectionSelectTitle": "Select Section:",
+  "pageSelectTitle": "Select Page:",
+  "chapters": [
+    {
+      "title": "Yellow Ship",
+      "pages": [
+        {
+          "url": "https://cdna.artstation.com/p/assets/images/images/016/690/352/large/paul-chadeisson-testspeed-0269.jpg?1553096105",
+          "text": "Link to full gallery: https://www.artstation.com/artwork/4bR1kY",
+          "altText": "This module is a ship's maneuvering part, that directly dock with any structure,(material, ship, space station etc...)."
+        },
+        {
+          "url": "https://cdna.artstation.com/p/assets/images/images/016/690/356/large/paul-chadeisson-testspeed-0269c.jpg?1553095934",
+          "text": "",
+          "altText": "This module is a ship's maneuvering part, that directly dock with any structure,(material, ship, space station etc...)."
+        },
+        {
+          "url": "https://cdnb.artstation.com/p/assets/images/images/016/690/365/large/paul-chadeisson-testspeed-0269c3.jpg?1553095949",
+          "text": "",
+          "altText": "This module is a ship's maneuvering part, that directly dock with any structure,(material, ship, space station etc...)."
+        },
+        {
+          "url": "https://cdnb.artstation.com/p/assets/images/images/016/688/749/large/paul-chadeisson-testspeed-0269b2.jpg?1553091604",
+          "text": "",
+          "altText": "This module is a ship's maneuvering part, that directly dock with any structure,(material, ship, space station etc...)."
+        }
+      ]
+    },
+    {
+      "title": "Carrier Facility",
+      "pages": [
+        {
+          "url": "https://cdna.artstation.com/p/assets/images/images/008/485/256/large/paul-chadeisson-testspeed-0186.jpg?1513089059",
+          "text": "Link to full gallery: https://www.artstation.com/artwork/boo0m",
+          "altText": "Air carrier facility, Octane render + 3D-coat + photoshop."
+        },
+        {
+          "type": "image",
+          "url": "https://cdna.artstation.com/p/assets/images/images/008/485/260/large/paul-chadeisson-testspeed-0187.jpg?1513089067",
+          "text": "",
+          "altText": "Air carrier facility, Octane render + 3D-coat + photoshop."
+        }
+      ]
+    },
+    {
+      "title": "Exoplanet",
+      "pages": [
+        {
+          "url": "https://cdna.artstation.com/p/assets/images/images/010/938/758/large/paul-chadeisson-testspeed-0221.jpg?1527032952",
+          "text": "Link to full gallery: https://www.artstation.com/artwork/WNGdD",
+          "altText": "Mysterious docking structure on an exoplanet."
+        },
+        {
+          "url": "https://cdnb.artstation.com/p/assets/images/images/010/938/757/large/paul-chadeisson-testspeed-0220b.jpg?1527032941",
+          "text": "How do they make things look so detailed and realistic? Wow",
+          "altText": "Mysterious docking structure on an exoplanet."
+        }
+      ]
+    }
+  ]
+}

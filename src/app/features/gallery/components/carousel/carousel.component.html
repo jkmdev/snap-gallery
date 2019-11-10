@@ -1,0 +1,36 @@
+<div *ngIf="page && url" class="carousel" [ngSwitch]="page.type">
+
+  <article *ngSwitchCase="'image'" 
+        role="img"
+        id="carousel-content"
+        class="image mx-auto d-block animated fadeIn" 
+        [ngStyle]="{'background-image': getUrl()}" 
+        [attr.aria-label]="page.altText"
+        >
+      <div role="button" id="previous-arrow" aria-label="previous" *ngIf="enablePrevious" class="arrow" (click)="previousPage()" (keyup.enter)="previousPage()" tabindex="0">
+        <i class="fa fa-chevron-left fa-5x" aria-hidden="true"></i>  
+      </div>
+      <div role="button" id="next-arrow" aria-label="next" *ngIf="enableNext" class="arrow right" (click)="nextPage()" (keyup.enter)="nextPage()" tabindex="0">
+        <i class="fa fa-chevron-right fa-5x" aria-hidden="true"></i>  
+      </div>
+  </article>
+
+  <div *ngSwitchCase="'video'" class="video-container">
+    <div role="button" aria-label="previous" *ngIf="enablePrevious" class="arrow" (click)="previousPage()" tabindex="0">
+      <i class="fa fa-chevron-left fa-5x" aria-hidden="true"></i>  
+    </div>
+
+    <iframe id="carousel-content" class="video" *ngIf="safeURL" width="100%" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      [src]="safeURL">
+    </iframe>
+    
+    <div role="button" aria-label="next" aria-controls="carousel-content" *ngIf="enableNext" class="arrow right" (click)="nextPage()" tabindex="0">
+      <i class="fa fa-chevron-right fa-5x" aria-hidden="true"></i>  
+    </div>
+  </div>
+  
+</div>
+
+<div *ngIf="!this.url">
+  No Page Provided
+</div>

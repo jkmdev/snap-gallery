@@ -1,0 +1,150 @@
+@import '../../../../styles';
+
+.app-navbar {
+
+    width: 100%;
+    background-color: $primary-color;
+    padding: 5px 30px 5px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 4;
+    
+    select {
+        outline:none;
+    }
+
+    .title {
+        @extend %font-lg;
+        flex: 1;    
+    }
+
+    .chapter-select {
+        @extend %font-sm;
+        flex: 3;  
+        display: flex;
+    }
+
+    .chapter-select label {
+        margin-bottom: 0px;
+        text-align: center;
+        line-height: 100%;
+        padding-right: 10px;
+        text-transform: uppercase;
+    }
+
+    @media (max-width: $modal-breakpoint) {
+        box-shadow: none;
+        .chapter-select {
+            display: none; 
+        }
+    }
+
+    .link {
+        flex: 1;  
+    }
+
+    .link button {
+        @extend %primary-button;   
+        float: right; 
+    }
+
+    .skip-content-link {
+        width: 0;
+        height: 20px;
+        overflow: hidden;
+        background-color: $accent-color;
+        font-weight: bold;
+        color: black;
+    }   
+    
+    @media screen and (max-width: 320px) {
+        padding: 10px;
+    }
+
+}
+
+.about-modal {
+
+    width: 1216px;
+    height: 606px;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: $modal-breakpoint) {
+        width: 100%;
+        height: auto;
+    }
+
+    h1 {
+        @extend %font-xl;
+        padding: 17px 10px 10px 28px;
+        margin: 0px;
+        border-bottom: none;
+    }
+
+    hr {
+        margin: 0px;
+        width: 90%;
+    }
+
+    .close-btn {
+        height: 55px;
+        width: 40px;
+        background-color: black;
+        padding: 0px;
+        margin: 0px;
+        border: 1px solid white;
+        box-shadow: none; 
+        outline: none;
+        margin-left: auto;
+    }
+
+    @media (max-width: $modal-breakpoint) {
+        .close-btn {
+            height: 40px;
+        }
+    }
+    
+    .about-modal-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        padding: 50px 151px 40px 165px;
+        p {
+            @extend %font-md;
+            color: white;
+            background-color: black;     
+        }
+        button {
+            @extend %font-lg;
+            color: black;
+            background-color: white;
+            width: 260px;
+            height: 60px;
+            border: none;
+        }
+
+        @media (max-width: $modal-breakpoint) {
+            overflow: auto;
+            padding: 28px;       
+            margin-bottom: 10px;
+            p {
+                padding-top: 10px;
+            }
+            button {
+                margin-top: 30px;
+                width: 100%;
+            }
+        }
+
+    }
+    
+}
+
+
+
+
