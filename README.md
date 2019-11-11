@@ -8,18 +8,19 @@ Images can be hosted from anywere and merely linked to through the `gallery.json
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Building and Publishing
+
+First enable Github pages from your project's settings page.
+
+Change the name of the website in the `package.json` file's build script to your own. If you're developing on Windows you'll want to get rid of `sudo` from the publish script.
+
+To publish your changes to the live version of the website, run the the `ng run git-r-done` command. 
+
+In your project settings page make sure you're on the `gh-pages` branch, then visit your website from your Github pages url.
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Publishing
-
-Change the name of the website in the `package.json` file's build script to your own.
-To publish your changes to the live version of the website, run the the `ng run git-r-done` command.
 
 ## Further help
 
