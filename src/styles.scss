@@ -4,7 +4,7 @@
 
 $primary-color: #000000;
 $secondary-color: #ffffff;
-$accent-color: #0575E6;
+$accent-color: #034486;
 $accent-color-transparent: rgba(0,85,255, 0.2);
 
 $font-primary-color: #F0F0F0;
@@ -74,11 +74,16 @@ body {
     outline: 2px solid $accent-color;
 }
 
-main, div, button, header, footer, label, select {
+div:focus {
+    outline: none;
+}
+
+div, button, header, footer, label, select {
     &:focus {
         outline: 2px solid $accent-color;
         border: 1px solid $accent-color;  
         background-color: $accent-color !important;       
+        color: white !important;
     }
 }
 
