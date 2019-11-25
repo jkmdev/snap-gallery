@@ -28,9 +28,7 @@ export class GalleryComponent{
   constructor(
     private modalService: ModalService,
     public galleryManagerService: GalleryManagerService
-  ) {
-    galleryManagerService.init();
-  }
+  ) {}
 
   hasBlockingFlag() {
     var blockPage = false;

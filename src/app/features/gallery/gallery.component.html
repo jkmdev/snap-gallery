@@ -2,9 +2,7 @@
 
     <app-navbar
         [chapters]="galleryManagerService.gallery ? galleryManagerService.gallery.chapters : []"
-        [currentPage]="galleryManagerService.currentPage"
-        (changeCurrentChapter)="galleryManagerService.goToChapterAndPage($event)"
-        (changeCurrentPage)="galleryManagerService.goToPage($event)">
+        [currentPage]="galleryManagerService.currentPage">
     </app-navbar>
 
     <section id="page-content">

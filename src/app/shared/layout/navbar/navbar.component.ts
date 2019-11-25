@@ -1,7 +1,9 @@
 import { Component, OnChanges, Input, Output, EventEmitter } from '@angular/core';
 import { Chapter } from '../../models/chapter';
 import { Page } from 'src/app/shared/models/page';
+
 import { ModalService } from '../../services/modal.service';
+import { GalleryManagerService } from '../../../shared/services/gallery-manager.service';
 
 import galleryJSON from '../../../../../src/data/gallery.json';
 
@@ -14,8 +16,6 @@ export class NavbarComponent implements OnChanges {
 
   @Input() chapters: Chapter[];
   @Input() currentPage: Page;
-  @Output() changeCurrentChapter = new EventEmitter<number>();
-  @Output() changeCurrentPage = new EventEmitter<number>();
 
   selectedChapter: number;
   selectedPage: number;
@@ -35,7 +35,10 @@ export class NavbarComponent implements OnChanges {
 
   pageNumbers: number[];
 
-  constructor(private modalService: ModalService) {
+  constructor(
+      private modalService: ModalService,
+      public galleryManagerService: GalleryManagerService
+    ) {
     this.title = galleryJSON.title;
     this.sectionSelectTitle = galleryJSON.sectionSelectTitle;
     this.pageSelectTitle = galleryJSON.pageSelectTitle;
@@ -53,16 +56,18 @@ export class NavbarComponent implements OnChanges {
   }
 
   updateChapterNumber() {
-    this.changeCurrentChapter.emit(this.selectedChapter);
+    this.galleryManagerService.goToChapterAndPage(this.selectedChapter);
   }
 
   updatePageNumber() {
-    this.changeCurrentPage.emit(this.selectedPage);
+    this.galleryManagerService.goToPage(this.selectedPage);
   }
 
   goToFirstPage(){
-    this.changeCurrentChapter.emit(0);
-    this.changeCurrentPage.emit(1);
+    this.selectedChapter = 0;
+    this.selectedPage = 1;
+    this.updateChapterNumber();
+    this.updatePageNumber();
     this.modalService.close(this.aboutModalId);
   }
 
