@@ -1,10 +1,10 @@
 <main id="app-gallery">
 
     <app-navbar
-        [chapters]="gallery ? gallery.chapters : []"
-        [currentPage]="currentPage"
-        (changeCurrentChapter)="goToChapterAndPage($event)"
-        (changeCurrentPage)="goToPage($event)">
+        [chapters]="galleryManagerService.gallery ? galleryManagerService.gallery.chapters : []"
+        [currentPage]="galleryManagerService.currentPage"
+        (changeCurrentChapter)="galleryManagerService.goToChapterAndPage($event)"
+        (changeCurrentPage)="galleryManagerService.goToPage($event)">
     </app-navbar>
 
     <section id="page-content">
@@ -14,24 +14,24 @@
             <h5>STATUS: {{ error.statusText }}</h5>
         </div>
     
-        <div *ngIf="!currentChapter" class="error">
+        <div *ngIf="!galleryManagerService.currentChapter" class="error">
             <h1>ERROR: Chapter not available</h1>
         </div>
     
-        <div *ngIf="currentChapter.pages.length === 0" class="error">
+        <div *ngIf="galleryManagerService.currentChapter.pages.length === 0" class="error">
             <h1>ERROR: Chapter doesn't have pages</h1>
         </div>
     
         <app-carousel 
-            [page]="currentPage"
-            [enableNext]="!atLastPageInGallery()"
-            [enablePrevious]="!atFirstPageInGallery()"
-            (gotoNextPage)="gotoNextPage()"
-            (gotoPreviousPage)="gotoPreviousPage()">
+            [page]="galleryManagerService.currentPage"
+            [enableNext]="!galleryManagerService.atLastPageInGallery()"
+            [enablePrevious]="!galleryManagerService.atFirstPageInGallery()"
+            (gotoNextPage)="galleryManagerService.gotoNextPage()"
+            (gotoPreviousPage)="galleryManagerService.gotoPreviousPage()">
         </app-carousel>
 
     <app-text-bar 
-        [text]="currentPage ? currentPage.text : ''">
+        [text]="galleryManagerService.currentPage ? galleryManagerService.currentPage.text : ''">
     </app-text-bar>
 
     </section>

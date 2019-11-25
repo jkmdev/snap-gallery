@@ -28,12 +28,12 @@ export class AppComponent implements OnInit {
 
   @HostListener('document:keydown.arrowleft', ['$event'])
   handleKeyboardEventArrowLeft(event: KeyboardEvent) { 
-    this.child.gotoPreviousPage();
+    this.child.galleryManagerService.gotoPreviousPage();
   }
 
   @HostListener('document:keydown.arrowright', ['$event'])
   handleKeyboardEventArrowRight(event: KeyboardEvent) { 
-    this.child.gotoNextPage();
+    this.child.galleryManagerService.gotoNextPage();
   }
 
 
