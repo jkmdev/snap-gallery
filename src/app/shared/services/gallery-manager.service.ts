@@ -6,6 +6,7 @@ import { Gallery } from '../../shared/models/gallery';
 import { HttpErrorResponse } from '@angular/common/http';
 
 import galleryJSON from '../../../../src/data/gallery.json';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,17 @@ export class GalleryManagerService {
   // stores gallery and tracks it state
 
   gallery: Gallery;
-  currentPage: Page;
-  goingForwardInGallery: boolean;
+
+  private readonly _currentPage = new BehaviorSubject<Page>(new Page());
+  readonly currentPage$ = this._currentPage.asObservable();
+
+  get currentPage(): Page {
+    return this._currentPage.getValue();
+  }
+
+  set currentPage(page: Page) {
+    this._currentPage.next(page);
+  }
 
   nsfwWarningModalId = 'nsfw-warning-modal';
 
@@ -29,7 +39,6 @@ export class GalleryManagerService {
   init() {
     this.gallery = new Gallery(galleryJSON);
     this.goToLatestChapter();
-    this.goingForwardInGallery = true;
   }
 
   // NAVIGATION
@@ -120,12 +129,15 @@ export class GalleryManagerService {
            this.currentPage.chapterNumber > 0;
   }
 
-  // signalPageUpdate()
-
-  // getCurrentChapterInfo
+  // RETURNING DATA
 
   returnCurrentChapter() {
     return this.gallery.getChapter(this.currentPage.chapterNumber);
   }
+
+  // SIGNAL UPDATES
+
+  // when new page is set, observable triggers and rest of comic gets current page
+  // newPageSet() 
 
 }
