@@ -15,7 +15,7 @@ export class GalleryManagerService {
 
   // stores gallery and tracks it state
 
-  gallery: Gallery;
+  private _gallery: Gallery;
 
   private readonly _currentPage = new BehaviorSubject<Page>(new Page());
   readonly currentPage$ = this._currentPage.asObservable();
@@ -24,9 +24,13 @@ export class GalleryManagerService {
     return this._currentPage.getValue();
   }
 
-  set currentPage(page: Page) {
-    this._currentPage.next(page);
+  get gallery(): Gallery {
+    return this._gallery;
   }
+
+  // set currentPage(page: Page) {
+  //   this._currentPage.next(page);
+  // }
 
   nsfwWarningModalId = 'nsfw-warning-modal';
 
@@ -37,7 +41,7 @@ export class GalleryManagerService {
   }
 
   init() {
-    this.gallery = new Gallery(galleryJSON);
+    this._gallery = new Gallery(galleryJSON);
     this.goToLatestChapter();
   }
 
@@ -98,7 +102,8 @@ export class GalleryManagerService {
 
   private setPage(chapterNumber, pageNumber) {
     let chapter = this.gallery.getChapter(chapterNumber)
-    this.currentPage = chapter.getPage(pageNumber);
+    // this.currentPage = chapter.getPage(pageNumber);
+    this._currentPage.next(chapter.getPage(pageNumber));
   }
 
   // BOOLEAN
@@ -135,9 +140,8 @@ export class GalleryManagerService {
     return this.gallery.getChapter(this.currentPage.chapterNumber);
   }
 
-  // SIGNAL UPDATES
-
-  // when new page is set, observable triggers and rest of comic gets current page
-  // newPageSet() 
+  returnAllGalleryChapters() {
+    return this.gallery ? this.gallery.chapters : [];
+  }
 
 }

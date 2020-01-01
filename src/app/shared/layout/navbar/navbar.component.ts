@@ -1,4 +1,4 @@
-import { Component, OnChanges, Input, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { Chapter } from '../../models/chapter';
 import { Page } from 'src/app/shared/models/page';
 
@@ -12,9 +12,9 @@ import galleryJSON from '../../../../../src/data/gallery.json';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnChanges {
+export class NavbarComponent {
 
-  @Input() currentPage: Page;
+  currentPage: Page;
   chapters: Chapter[];
 
   selectedChapter: number;
@@ -42,10 +42,16 @@ export class NavbarComponent implements OnChanges {
     this.title = galleryJSON.title;
     this.sectionSelectTitle = galleryJSON.sectionSelectTitle;
     this.pageSelectTitle = galleryJSON.pageSelectTitle;
-    this.chapters = galleryManagerService.gallery ? galleryManagerService.gallery.chapters : []
+    this.chapters = galleryManagerService.returnAllGalleryChapters();
+    galleryManagerService.currentPage$.subscribe(
+      newPage => this.updateCurrentPage(newPage),
+      err => console.error('Observer got an error: ' + err),
+      () => console.log('Observer got a complete notification')
+    );
   }
 
-  ngOnChanges() {
+  private updateCurrentPage(newPage) {
+    this.currentPage = newPage;
     if (this.currentPage) {
       const pageAmount = this.chapters[this.currentPage.chapterNumber].pageAmount;
       this.pageNumbers = Array(pageAmount).fill(0).map((x, i) => i + 1);
@@ -55,6 +61,8 @@ export class NavbarComponent implements OnChanges {
       this.pageNumbers = [];
     }
   }
+
+  // update navbar when current page changes
 
   updateChapterNumber() {
     this.galleryManagerService.goToChapter(this.selectedChapter);

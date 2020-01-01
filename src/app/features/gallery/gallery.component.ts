@@ -11,6 +11,7 @@ import { ModalService } from '../../shared/services/modal.service';
 import { GalleryManagerService } from '../../shared/services/gallery-manager.service';
 
 import { HttpErrorResponse } from '@angular/common/http';
+import { Page } from 'src/app/shared/models/page';
 
 @Component({
   selector: 'app-gallery',
@@ -19,6 +20,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class GalleryComponent{
 
+  currentPage : Page;
   goingForwardInGallery: boolean;
 
   nsfwWarningModalId = 'nsfw-warning-modal';
@@ -28,7 +30,13 @@ export class GalleryComponent{
   constructor(
     private modalService: ModalService,
     public galleryManagerService: GalleryManagerService
-  ) {}
+  ) {
+    galleryManagerService.currentPage$.subscribe(
+      newPage => this.currentPage = newPage,
+      err => console.error('Observer got an error: ' + err),
+      () => console.log('Observer got a complete notification')
+    );
+  }
 
   hasBlockingFlag() {
     var blockPage = false;

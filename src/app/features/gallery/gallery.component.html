@@ -1,8 +1,6 @@
 <main id="app-gallery">
 
-    <app-navbar
-        [currentPage]="galleryManagerService.currentPage">
-    </app-navbar>
+    <app-navbar></app-navbar>
 
     <section id="page-content">
 
@@ -20,7 +18,7 @@
         </div>
     
         <app-carousel 
-            [page]="galleryManagerService.currentPage"
+            [page]="currentPage"
             [enableNext]="!galleryManagerService.atLastPageInGallery()"
             [enablePrevious]="!galleryManagerService.atFirstPageInGallery()"
             (gotoNextPage)="galleryManagerService.gotoNextPage()"
@@ -28,7 +26,7 @@
         </app-carousel>
 
         <app-text-bar 
-            [text]="galleryManagerService.currentPage ? galleryManagerService.currentPage.text : ''">
+            [text]="currentPage ? currentPage.text : ''">
         </app-text-bar>
 
     </section>
