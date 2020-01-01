@@ -12,8 +12,9 @@ import galleryJSON from '../../../../src/data/gallery.json';
 })
 export class GalleryManagerService {
 
+  // stores gallery and tracks it state
+
   gallery: Gallery;
-  currentChapter: Chapter;
   currentPage: Page;
   goingForwardInGallery: boolean;
 
@@ -26,32 +27,25 @@ export class GalleryManagerService {
   }
 
   init() {
-    this.gallery = new Gallery(galleryJSON.title);
-    galleryJSON.chapters.forEach((chapterJSON) =>{
-
-      this.gallery.addNewChapter(chapterJSON.title);
-
-      chapterJSON.pages.forEach((pageJSON) => {
-        this.gallery.getLatestChapter().addNewPage(     
-          pageJSON
-        );
-      })
-
-    });
-
-    const latestChapterNumber = this.gallery.getLatestChapterNumber();
-    this.goToChapterAndPage(latestChapterNumber, false);
+    this.gallery = new Gallery(galleryJSON);
+    this.goToLatestChapter();
     this.goingForwardInGallery = true;
   }
 
-  // PAGINATION/NAVIGATION
+  // NAVIGATION
 
-  goToChapterAndPage(chapterNumber, startAtBeginning: boolean = true) {
-    this.currentChapter = this.gallery.getChapter(chapterNumber);
+  goToLatestChapter() {
+    const latestChapterNumber = this.gallery.getLatestChapterNumber();
+    this.goToChapter(latestChapterNumber, false);
+  }
+
+  goToChapter(newChapterNumber, startAtBeginning: boolean = true) {
+    let currentChapter = this.gallery.getChapter(newChapterNumber);
+    let chapterNumber = currentChapter.chapterNumber;
     if(startAtBeginning) {
-      this.currentPage = this.currentChapter.getPage(1);
+      this.setPage(chapterNumber, 1);
     } else {
-      this.currentPage = this.currentChapter.getPage(this.currentChapter.pageAmount);
+      this.setPage(chapterNumber, currentChapter.pageAmount);
     }
   }
 
@@ -61,26 +55,22 @@ export class GalleryManagerService {
       pageNumber = parseInt(pageNumber, 10);
     }
 
+    const chapterNumber = this.currentPage.chapterNumber;
+
     if(pageNumber > this.currentPage.pageNumber) { // go to next page
       if(this.atLastPageInChapter() && !this.atLastPageInGallery()) { // go to next chapter
-        const chapterNumber = this.currentPage.chapterNumber + 1;
-        this.goToChapterAndPage(chapterNumber);
+        this.goToChapter(chapterNumber + 1);
       } else {
-        this.setPage(pageNumber);
+        this.setPage(chapterNumber, pageNumber);
       }
     } else if(pageNumber < this.currentPage.pageNumber) { // go to previous page
       if(this.atFirstPageInChapter() && this.isNotFirstChapterInGallery()) { // go to previous chapter
-        const chapterNumber = this.currentPage.chapterNumber - 1;
-        this.goToChapterAndPage(chapterNumber, false);
+        this.goToChapter(chapterNumber - 1, false);
       } else {
-        this.setPage(pageNumber);
+        this.setPage(chapterNumber, pageNumber);
       }
     }
 
-  }
-
-  setPage(pageNumber) {
-    this.currentPage = this.currentChapter.getPage(pageNumber);
   }
 
   gotoNextPage() {
@@ -97,11 +87,16 @@ export class GalleryManagerService {
     }
   }
 
+  private setPage(chapterNumber, pageNumber) {
+    let chapter = this.gallery.getChapter(chapterNumber)
+    this.currentPage = chapter.getPage(pageNumber);
+  }
+
   // BOOLEAN
 
   atLastPageInChapter() {
     return this.currentPage &&
-           this.currentPage.pageNumber === this.currentChapter.pageAmount;
+           this.currentPage.pageNumber === this.returnCurrentChapter().pageAmount;
   }
 
   atFirstPageInChapter() {
@@ -111,7 +106,7 @@ export class GalleryManagerService {
 
   atLastPageInGallery() {
     return this.currentPage && 
-           (this.currentPage.pageNumber === this.currentChapter.pageAmount &&
+           (this.currentPage.pageNumber === this.returnCurrentChapter().pageAmount &&
            this.currentPage.chapterNumber === this.gallery.getLatestChapterNumber());
   }
 
@@ -123,6 +118,14 @@ export class GalleryManagerService {
   isNotFirstChapterInGallery() {
     return this.currentPage && 
            this.currentPage.chapterNumber > 0;
+  }
+
+  // signalPageUpdate()
+
+  // getCurrentChapterInfo
+
+  returnCurrentChapter() {
+    return this.gallery.getChapter(this.currentPage.chapterNumber);
   }
 
 }

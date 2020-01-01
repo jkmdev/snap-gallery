@@ -1,7 +1,6 @@
 <main id="app-gallery">
 
     <app-navbar
-        [chapters]="galleryManagerService.gallery ? galleryManagerService.gallery.chapters : []"
         [currentPage]="galleryManagerService.currentPage">
     </app-navbar>
 
@@ -12,11 +11,11 @@
             <h5>STATUS: {{ error.statusText }}</h5>
         </div>
     
-        <div *ngIf="!galleryManagerService.currentChapter" class="error">
+        <div *ngIf="!galleryManagerService.returnCurrentChapter()" class="error">
             <h1>ERROR: Chapter not available</h1>
         </div>
     
-        <div *ngIf="galleryManagerService.currentChapter.pages.length === 0" class="error">
+        <div *ngIf="galleryManagerService.returnCurrentChapter().pages.length === 0" class="error">
             <h1>ERROR: Chapter doesn't have pages</h1>
         </div>
     
@@ -28,9 +27,9 @@
             (gotoPreviousPage)="galleryManagerService.gotoPreviousPage()">
         </app-carousel>
 
-    <app-text-bar 
-        [text]="galleryManagerService.currentPage ? galleryManagerService.currentPage.text : ''">
-    </app-text-bar>
+        <app-text-bar 
+            [text]="galleryManagerService.currentPage ? galleryManagerService.currentPage.text : ''">
+        </app-text-bar>
 
     </section>
 

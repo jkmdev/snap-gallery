@@ -14,8 +14,8 @@ import galleryJSON from '../../../../../src/data/gallery.json';
 })
 export class NavbarComponent implements OnChanges {
 
-  @Input() chapters: Chapter[];
   @Input() currentPage: Page;
+  chapters: Chapter[];
 
   selectedChapter: number;
   selectedPage: number;
@@ -42,6 +42,7 @@ export class NavbarComponent implements OnChanges {
     this.title = galleryJSON.title;
     this.sectionSelectTitle = galleryJSON.sectionSelectTitle;
     this.pageSelectTitle = galleryJSON.pageSelectTitle;
+    this.chapters = galleryManagerService.gallery ? galleryManagerService.gallery.chapters : []
   }
 
   ngOnChanges() {
@@ -56,7 +57,7 @@ export class NavbarComponent implements OnChanges {
   }
 
   updateChapterNumber() {
-    this.galleryManagerService.goToChapterAndPage(this.selectedChapter);
+    this.galleryManagerService.goToChapter(this.selectedChapter);
   }
 
   updatePageNumber() {

@@ -14,14 +14,27 @@ export class Gallery {
     chapters: Array<Chapter>;
 
     constructor(
-        title?: string
+        galleryJSON?: any
     ) {
-        this.title = title || '';
+        this.title = galleryJSON.title || '';
         this.chapterAmount = 0;
         this.chapters = [];
+
+        galleryJSON.chapters.forEach((chapterJSON) =>{
+
+            this.addNewChapter(chapterJSON.title);
+      
+            chapterJSON.pages.forEach((pageJSON) => {
+              this.getLatestChapter().addNewPage(     
+                pageJSON
+              );
+            })
+      
+        });
+
     }
 
-    addNewChapter(title: string) {
+    private addNewChapter(title: string) {
         this.chapters.push(
             new Chapter(
                 title,
