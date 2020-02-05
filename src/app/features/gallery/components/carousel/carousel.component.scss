@@ -2,11 +2,6 @@
 
 .carousel {
 
-    display: flex;
-    justify-content: center;
-    z-index: 0;
-    border: none;
-
     .arrow {
         height: 100%;
         width: 90px;
@@ -27,7 +22,7 @@
         i {
             color: white;
         }
-        @media screen and (max-width: $modal-breakpoint) {
+        @media screen and (max-width: $view-modal-breakpoint) {
             width: 60px;
             i {
                 font-size: 60px;
@@ -41,11 +36,13 @@
     }
 
     .image {
+        border: 5px solid red;
         width: 100%;
         display: flex;
         background-repeat: no-repeat;
         background-position: center; 
         background-size: contain; 
+        
         position: relative;
         background-color: #2d2d2d;
     }
@@ -64,6 +61,25 @@
     .video {
         position: relative;
         z-index: 0;
+    }
+}
+
+.zoomed-out-img {
+    display: flex;
+    justify-content: center;
+    overflow: none;
+    .image {
+        width: 100%;
+        background-size: contain; 
+    }
+}
+
+.zoomed-in-img {
+    overflow-x: scroll;
+    .image {
+        width: 1200px;
+        //transition: width 1s ease-in-out;
+        background-size: cover; 
     }
 }
 

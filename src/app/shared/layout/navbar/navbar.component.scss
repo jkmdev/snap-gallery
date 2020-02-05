@@ -1,6 +1,6 @@
 @import '../../../../styles';
 
-.app-navbar {
+header {
 
     width: 100%;
     background-color: $primary-color;
@@ -35,7 +35,7 @@
         text-transform: uppercase;
     }
 
-    @media (max-width: $modal-breakpoint) {
+    @media (max-width: $view-modal-breakpoint) {
         box-shadow: none;
         .chapter-select {
             display: none; 
@@ -49,6 +49,17 @@
     .link button {
         @extend %primary-button;   
         float: right; 
+        margin: 1px;
+    }
+    
+    .mobile-icons {
+        button {
+            @extend %primary-button;  
+            font-size: 2.3rem;
+        }
+        button:not(:last-child) {
+            margin-right: 10px;
+        }
     }
 
     .skip-content-link {
@@ -73,7 +84,7 @@
     display: flex;
     flex-direction: column;
 
-    @media (max-width: $modal-breakpoint) {
+    @media (max-width: $view-modal-breakpoint) {
         width: 100%;
         height: auto;
     }
@@ -102,7 +113,7 @@
         margin-left: auto;
     }
 
-    @media (max-width: $modal-breakpoint) {
+    @media (max-width: $view-modal-breakpoint) {
         .close-btn {
             height: 40px;
         }
@@ -128,7 +139,7 @@
             border: none;
         }
 
-        @media (max-width: $modal-breakpoint) {
+        @media (max-width: $view-modal-breakpoint) {
             overflow: auto;
             padding: 28px;       
             margin-bottom: 10px;

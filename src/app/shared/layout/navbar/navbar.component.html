@@ -1,4 +1,4 @@
-<header class="app-navbar fixed-top sticky-top">
+<header class="fixed-top sticky-top">
 
   <a id="skip-content-link" tabindex="0" (focus)="setSkipContentStyle()" (focusout)="removeSkipContentStyle()" (keyup.enter)="skipContent()" class="skip-content-link">Skip to main content</a>
 
@@ -24,9 +24,20 @@
         </select>
     </span>
   </span>
-  <span class="link">
+  <span class="link about-btn">
     <button (click)="openAboutModal()" label="About Gallery Button">
       ABOUT
+    </button>
+  </span>
+  <span class="mobile-icons">
+    <button id="zoom-icon" (click)="toggleImageZoom()">
+      <i class="fa fa-search-plus"></i>
+    </button>
+    <button>
+      <i class="fa fa-eye-slash"></i>
+    </button>
+    <button>
+      <i class="fa fa-question-circle"></i>
     </button>
   </span>
 

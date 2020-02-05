@@ -25,9 +25,51 @@ $textbar-height: 10vh; // delete this later
 
 /* BREAKPOINTS */
 
-$modal-breakpoint: 1500px;
+$view-modal-breakpoint: 1500px;
 $y-mobile-breakpoint: 600px;
-$mobile-breakpoint: 450px;
+$x-mobile-breakpoint: 450px;
+
+/* X-ORIENTED MOBILE RESPONSIVENESS */
+
+@media screen and (max-width: $x-mobile-breakpoint) {
+
+    // navbar 
+
+    header {
+        height: 10vh;
+        padding: 10px !important;
+    }
+
+    header .title {
+        font-size: 5vw !important;
+    }
+    
+    .about-btn {
+        display: none;
+    }
+    
+    .mobile-icons {
+        visibility: visible;
+    }
+    
+    .arrow {
+        visibility: hidden;
+    }
+
+    article {
+        height: 68vh;
+    }
+
+    footer {
+        height: 22vh;
+    }
+}
+
+@media screen and (min-width: $x-mobile-breakpoint) {
+    .mobile-icons {
+        display: none;
+    }
+}
 
 /* FONT */
 
@@ -87,6 +129,7 @@ div, button, header, footer, label, select {
     }
 }
 
+
 /* OVERALL LAYOUT POSITIONING */
 
 main {
@@ -112,18 +155,6 @@ main {
         }
         footer {
             height: 18vh;
-        }
-    }
-
-    @media screen and (max-width: $mobile-breakpoint) {
-        header {
-            height: 10vh;
-        }
-        article {
-            height: 68vh;
-        }
-        footer {
-            height: 22vh;
         }
     }
 

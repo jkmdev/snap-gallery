@@ -27,7 +27,7 @@
         box-shadow: 0px 3px 6px #000000;
         color: white;
 
-        @media (max-width: $modal-breakpoint) {
+        @media (max-width: $view-modal-breakpoint) {
             left: 50%;
             transform: translate(-50%, 0);
             width: 90vw; 
