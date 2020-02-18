@@ -1,6 +1,23 @@
-
 <footer aria-label="Character Dialogue" aria-describedby="dialogue">
-  <span id="dialogue" class="text">
-    {{text}}
-  </span>
+  <div class="mobile-page-controls">
+    <span [ngStyle]="{'color': isVisible('start')}" (click)="galleryManagerService.gotoPreviousPage()">
+      <i class="fa fa-arrow-left"></i>
+    </span>
+    <span class="page-markers">
+      <span>
+        C{{ currentPage.chapterNumber }}
+      </span>
+      <span>
+        P{{ currentPage.pageNumber }}
+      </span>
+    </span>
+    <span [ngStyle]="{'color': isVisible('end')}" (click)="galleryManagerService.gotoNextPage()">
+      <i class="fa fa-arrow-right"></i>
+    </span>
+  </div>
+  <div class="text">
+    <span>
+      {{text}}
+    </span>
+  </div>
 </footer>

@@ -27,7 +27,7 @@ $textbar-height: 10vh; // delete this later
 
 $view-modal-breakpoint: 1500px;
 $y-mobile-breakpoint: 600px;
-$x-mobile-breakpoint: 450px;
+$x-mobile-breakpoint: 750px;
 
 /* X-ORIENTED MOBILE RESPONSIVENESS */
 
@@ -36,7 +36,6 @@ $x-mobile-breakpoint: 450px;
     // navbar 
 
     header {
-        height: 10vh;
         padding: 10px !important;
     }
 
@@ -56,13 +55,6 @@ $x-mobile-breakpoint: 450px;
         visibility: hidden;
     }
 
-    article {
-        height: 68vh;
-    }
-
-    footer {
-        height: 22vh;
-    }
 }
 
 @media screen and (min-width: $x-mobile-breakpoint) {
@@ -90,14 +82,14 @@ body {
 }
 
 %font-md {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     @media screen and (max-height: $y-mobile-breakpoint) {
         font-size: 1rem;
     }
 }
 
 %font-sm {
-    font-size: .95rem;
+    font-size: 1.2rem;
 }
 
 /* ACCESSIBILITY */
@@ -136,27 +128,41 @@ main {
 
     height: 100vh;
     
-    header {
-        height: 5vh;
-    }
-    article {
-        height: 80vh;
-    }
-    footer {
-        height: 15vh;
+    // header {
+    //     height: 5vh;
+    // }
+    // article {
+    //     height: 80vh;
+    // }
+    // footer {
+    //     height: 15vh;
+    // }
+
+    @media screen and (max-width: $x-mobile-breakpoint) {
+
+        // header {
+        //     height: 7vh;
+        // }
+        // article {
+        //     height: 73vh;
+        // }
+        // footer {
+        //     height: 20vh;
+        // }
+
     }
 
-    @media screen and (max-width: 1000px) {
-        header {
-            height: 10vh;
-        }
-        article {
-            height: 72vh;
-        }
-        footer {
-            height: 18vh;
-        }
-    }
+    // @media screen and (max-width: 1000px) {
+    //     header {
+    //         height: 10vh;
+    //     }
+    //     article {
+    //         height: 72vh;
+    //     }
+    //     footer {
+    //         height: 18vh;
+    //     }
+    // }
 
 }
 

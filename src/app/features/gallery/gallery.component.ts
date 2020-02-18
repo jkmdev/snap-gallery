@@ -18,7 +18,7 @@ import { Page } from 'src/app/shared/models/page';
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.scss']
 })
-export class GalleryComponent{
+export class GalleryComponent {
 
   currentPage : Page;
   goingForwardInGallery: boolean;

@@ -22,12 +22,6 @@
         i {
             color: white;
         }
-        @media screen and (max-width: $view-modal-breakpoint) {
-            width: 60px;
-            i {
-                font-size: 60px;
-            }
-        }
     }
 
     .right {
@@ -36,15 +30,16 @@
     }
 
     .image {
-        border: 5px solid red;
         width: 100%;
+        height: 100vh;
         display: flex;
         background-repeat: no-repeat;
         background-position: center; 
         background-size: contain; 
-        
+        z-index: 0;
         position: relative;
         background-color: #2d2d2d;
+        // background-color: yellow;
     }
 
     .video-container {
@@ -77,9 +72,10 @@
 .zoomed-in-img {
     overflow-x: scroll;
     .image {
-        width: 1200px;
+        width:1000px; 
+        height:auto
         //transition: width 1s ease-in-out;
-        background-size: cover; 
+        // background-size: contain; 
     }
 }
 
