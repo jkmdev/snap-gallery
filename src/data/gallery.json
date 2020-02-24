@@ -1,7 +1,7 @@
 {
-  "title": "Paul C. Gallery",
-  "aboutTitle": "Paul Chadeisson is Awesome",
-  "aboutText": "So that's why he's the focus of this snap-gallery sample site. :) <br><br> As an example of how this website works, some of his artwork is being displayed here. <br><br> You can select what content you'd like to see from the top navbar, or click the button below to get started from the very first page.",
+  "title": "Snap Gallery Demo",
+  "aboutTitle": "About Snap Gallery",
+  "aboutText": "Welcome to the Snap Gallery demo site! :) <br><br> Through here you can get an idea of what snap gallery looks like and how it works. <br><br> When you exit this modal you can select what content you'd like to see from the top navbar, or click the button below to get started from the very first page.",
   "aboutButtonText": "GET STARTED",
   "sectionSelectTitle": "Select Section:",
   "pageSelectTitle": "Select Page:",
@@ -57,7 +57,7 @@
         },
         {
           "url": "https://cdnb.artstation.com/p/assets/images/images/010/938/757/large/paul-chadeisson-testspeed-0220b.jpg?1527032941",
-          "text": "How do they make things look so detailed and realistic? Wow",
+          "text": "How do they make things look so detailed and realistic? Wow. How do they make things look so detailed and realistic? Wow.",
           "altText": "Mysterious docking structure on an exoplanet."
         }
       ]

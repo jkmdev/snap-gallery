@@ -64,21 +64,17 @@ export class ModalComponent implements OnInit, OnChanges {
 
       this.firstFocusableEl.focus();
 
-      document.getElementById("page-content").setAttribute("style", "filter: blur(50px);");  
+      document.getElementById("page-content").setAttribute("style", "filter: blur(20px); background-color: green;"); 
+      document.getElementById("page-content-overlay").style.display = "block"; 
       document.body.classList.add('app-modal-open');
-    //   console.log('0---------');
-    //   console.log(this.focusedElBeforeOpen);
-    //   console.log('1---------');
   }
 
   // close modal
   close(): void {
-    //   console.log(this.focusedElBeforeOpen);
-    //   console.log('2---------');
       document.getElementById("page-content").removeAttribute('style');
+      document.getElementById("page-content-overlay").style.display = "none"; 
       this.renderer.setStyle(this.modal, 'display', 'none');
       var elementExists = document.body.contains(this.focusedElBeforeOpen);
-    //   console.log(this.focusedElBeforeOpen);
       if(this.focusedElBeforeOpen && elementExists) {
         this.focusedElBeforeOpen.focus();
       } else {

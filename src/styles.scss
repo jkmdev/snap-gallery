@@ -4,7 +4,7 @@
 
 $primary-color: #000000;
 $secondary-color: #ffffff;
-$accent-color: #034486;
+$accent-color: #b92b27;
 $accent-color-transparent: rgba(0,85,255, 0.2);
 
 $font-primary-color: #F0F0F0;
@@ -27,7 +27,7 @@ $textbar-height: 10vh; // delete this later
 
 $view-modal-breakpoint: 1500px;
 $y-mobile-breakpoint: 600px;
-$x-mobile-breakpoint: 750px;
+$x-mobile-breakpoint: 800px;
 
 /* X-ORIENTED MOBILE RESPONSIVENESS */
 
@@ -109,60 +109,29 @@ body {
 }
 
 div:focus {
-    outline: none;
+    // outline: none;
 }
 
 div, button, header, footer, label, select {
     &:focus {
-        outline: 2px solid $accent-color;
-        border: 1px solid $accent-color;  
-        background-color: $accent-color !important;       
-        color: white !important;
+        background-color: $accent-color !important;
+        outline: none;
     }
 }
 
+.alt-hover-style {
+    &:focus {
+        color: $accent-color !important;
+        background-color: black !important;
+        outline: none;
+    }
+}
 
 /* OVERALL LAYOUT POSITIONING */
 
 main {
 
     height: 100vh;
-    
-    // header {
-    //     height: 5vh;
-    // }
-    // article {
-    //     height: 80vh;
-    // }
-    // footer {
-    //     height: 15vh;
-    // }
-
-    @media screen and (max-width: $x-mobile-breakpoint) {
-
-        // header {
-        //     height: 7vh;
-        // }
-        // article {
-        //     height: 73vh;
-        // }
-        // footer {
-        //     height: 20vh;
-        // }
-
-    }
-
-    // @media screen and (max-width: 1000px) {
-    //     header {
-    //         height: 10vh;
-    //     }
-    //     article {
-    //         height: 72vh;
-    //     }
-    //     footer {
-    //         height: 18vh;
-    //     }
-    // }
 
 }
 
@@ -176,8 +145,9 @@ select {
 } 
     
 button {
-    -webkit-appearance: button;
-    background-color: green;
+    @extend %font-sm;
+    background-color: $primary-color;
+    border: none;  
 }
 
 .justify-start {

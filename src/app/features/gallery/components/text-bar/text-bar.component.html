@@ -1,7 +1,13 @@
 <footer aria-label="Character Dialogue" aria-describedby="dialogue">
+
   <div class="mobile-page-controls">
-    <span [ngStyle]="{'color': isVisible('start')}" (click)="galleryManagerService.gotoPreviousPage()">
-      <i class="fa fa-arrow-left"></i>
+    <span>
+      <button class="alt-hover-style" 
+              [ngStyle]="{'color': isVisible('start')}" 
+              [disabled]="galleryManagerService.atFirstPageInGallery() ? 'disabled' : null" 
+              (click)="galleryManagerService.gotoPreviousPage()">
+          <i class="fa fa-arrow-left"></i>
+      </button>
     </span>
     <span class="page-markers">
       <span>
@@ -11,13 +17,20 @@
         P{{ currentPage.pageNumber }}
       </span>
     </span>
-    <span [ngStyle]="{'color': isVisible('end')}" (click)="galleryManagerService.gotoNextPage()">
-      <i class="fa fa-arrow-right"></i>
+    <span >
+      <button class="alt-hover-style" 
+              [ngStyle]="{'color': isVisible('end')}" 
+              [disabled]="galleryManagerService.atLastPageInGallery() ? 'disabled' : null" 
+              (click)="galleryManagerService.gotoNextPage()">
+        <i class="fa fa-arrow-right"></i>
+      </button>
     </span>
   </div>
+
   <div class="text">
     <span>
       {{text}}
     </span>
   </div>
+  
 </footer>

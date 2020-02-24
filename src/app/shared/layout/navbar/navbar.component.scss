@@ -18,7 +18,7 @@ header {
 
     .title {
         @extend %font-lg;
-        flex: 1;    
+        flex: 1.3;    
     }
 
     .chapter-select {
@@ -36,7 +36,6 @@ header {
     }
 
     @media (max-width: $view-modal-breakpoint) {
-        box-shadow: none;
         .chapter-select {
             display: none; 
         }

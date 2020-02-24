@@ -118,17 +118,7 @@ export class NavbarComponent {
       zoomIconElem.innerHTML = zoomedOutHtml;
       carouselElem.classList.add("zoomed-in-img");
     }
-    
-    // var element = document.getElementsByClassName("carousel")[0];
-    // console.log(element);
-    // element.classList.add("zoomed-in-img");
-
-    
-    // document.getElementById("zoom-icon").innerHTML = "<div>big dick</div>";
-    // console.log($event);
-    // $event.srcElement.className = 'fa fa-search-minus';
-    // $event.srcElement.parentElement.innerHtml = "<div>big dick</div>"
-    // console.log($event.srcElement.parentElement.innerHtml);
+  
   }
 
   zoomOutImage(e) {
