@@ -2,7 +2,10 @@
 
 main {
     color: $font-primary-color;
-    background-color: black;
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     .error {
         display: flex;
         height: 100%;
@@ -10,6 +13,15 @@ main {
         justify-content: center;
         align-items: center;
         color: black;
+    }
+    app-navbar {
+        flex: 1;
+    }
+    section {
+        flex: 20;
+    }
+    app-text-bar  {
+        flex: 1;
     }
 }
 
@@ -33,10 +45,14 @@ main {
     }
 }
 
+#page-content {
+
+}
+
 #page-content-overlay {
     background-color: white;
     position: fixed; 
-    opacity: 0.1;
+    opacity: 0.9;
     display: none; 
     width: 100%;
     height: 5000px;

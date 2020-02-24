@@ -2,7 +2,7 @@
 
   <div class="mobile-page-controls">
     <span>
-      <button class="alt-hover-style" 
+      <button class="alt-focus-style" 
               [ngStyle]="{'color': isVisible('start')}" 
               [disabled]="galleryManagerService.atFirstPageInGallery() ? 'disabled' : null" 
               (click)="galleryManagerService.gotoPreviousPage()">
@@ -18,7 +18,7 @@
       </span>
     </span>
     <span >
-      <button class="alt-hover-style" 
+      <button class="alt-focus-style" 
               [ngStyle]="{'color': isVisible('end')}" 
               [disabled]="galleryManagerService.atLastPageInGallery() ? 'disabled' : null" 
               (click)="galleryManagerService.gotoNextPage()">

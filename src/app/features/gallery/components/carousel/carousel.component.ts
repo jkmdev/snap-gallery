@@ -43,6 +43,10 @@ export class CarouselComponent implements OnInit, OnChanges {
     return `url(${this.url})`;
   }
 
+  getPath() {
+    return `${this.url}`;
+  }
+
   nextPage() {
     if (this.enableNext) {
       this.gotoNextPage.emit(true);

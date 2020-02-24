@@ -112,14 +112,20 @@ div:focus {
     // outline: none;
 }
 
-div, button, header, footer, label, select {
+button, label {
     &:focus {
         background-color: $accent-color !important;
         outline: none;
     }
 }
 
-.alt-hover-style {
+div, select {
+    &:focus {
+        outline: none;
+    }
+}
+
+.alt-focus-style {
     &:focus {
         color: $accent-color !important;
         background-color: black !important;

@@ -25,11 +25,11 @@
             (gotoPreviousPage)="galleryManagerService.gotoPreviousPage()">
         </app-carousel>
 
-        <app-text-bar 
-            [text]="currentPage ? currentPage.text : ''">
-        </app-text-bar>
-
     </section>
+
+    <app-text-bar 
+        [text]="currentPage ? currentPage.text : ''">
+    </app-text-bar>
 
     <!-- Overlay that gets applied when a modal is active -->
     <section id="page-content-overlay"></section>

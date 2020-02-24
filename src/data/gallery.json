@@ -7,58 +7,59 @@
   "pageSelectTitle": "Select Page:",
   "chapters": [
     {
-      "title": "Yellow Ship",
+      "title": "Yellow Spacecraft",
       "pages": [
         {
+          "type": "image",
           "url": "https://cdna.artstation.com/p/assets/images/images/016/690/352/large/paul-chadeisson-testspeed-0269.jpg?1553096105",
           "text": "Link to full gallery: https://www.artstation.com/artwork/4bR1kY",
-          "altText": "This module is a ship's maneuvering part, that directly dock with any structure,(material, ship, space station etc...)."
+          "altText": "A rendering of a yellow ship in outer space."
         },
         {
-          "url": "https://cdna.artstation.com/p/assets/images/images/016/690/356/large/paul-chadeisson-testspeed-0269c.jpg?1553095934",
-          "text": "",
-          "altText": "This module is a ship's maneuvering part, that directly dock with any structure,(material, ship, space station etc...)."
-        },
-        {
-          "url": "https://cdnb.artstation.com/p/assets/images/images/016/690/365/large/paul-chadeisson-testspeed-0269c3.jpg?1553095949",
-          "text": "",
-          "altText": "This module is a ship's maneuvering part, that directly dock with any structure,(material, ship, space station etc...)."
-        },
-        {
+          "type": "image",
           "url": "https://cdnb.artstation.com/p/assets/images/images/016/688/749/large/paul-chadeisson-testspeed-0269b2.jpg?1553091604",
           "text": "",
-          "altText": "This module is a ship's maneuvering part, that directly dock with any structure,(material, ship, space station etc...)."
+          "altText": "A rendering of a yellow ship in outer space."
         }
       ]
     },
     {
-      "title": "Carrier Facility",
+      "title": "Color Compositions",
       "pages": [
         {
-          "url": "https://cdna.artstation.com/p/assets/images/images/008/485/256/large/paul-chadeisson-testspeed-0186.jpg?1513089059",
-          "text": "Link to full gallery: https://www.artstation.com/artwork/boo0m",
+          "type": "image",
+          "url": "https://cdna.artstation.com/p/assets/images/images/024/438/656/4k/rashx-pozdnyakov-colored-4.jpg?1582423289",
+          "text": "month of dailies (design/color/composition exercises). more sketches and dailies here https://www.instagram.com/mrmajamb0/",
+          "altText": "A collection of paintings that practice colour composition."
+        },
+        {
+          "type": "image",
+          "url": "https://cdna.artstation.com/p/assets/images/images/003/548/368/large/stephane-wootha-richard-color-composition-process-01-thumbnails-sheet-step-04-by-wootha.jpg?1474901103",
+          "text": "Practice colour composition studies by Stéphane Wootha Richard",
+          "altText": "A collection of paintings that practice colour composition."
+        }
+      ]
+    },
+    {
+      "title": "Forest",
+      "pages": [
+        {
+          "type": "image",
+          "url": "https://cdna.artstation.com/p/assets/images/images/010/640/008/large/sylvain-sarrailh-sunsetbridgeartstation.jpg?1525445450",
+          "text": "Animated background from Forest of Liars : http://www.forestofliars.com",
+          "altText": "Animated background from Forest of Liars : http://www.forestofliars.com."
+        },
+        {
+          "type": "image",
+          "url": "https://cdnb.artstation.com/p/assets/images/images/024/453/087/large/michael-handt-winterforestdusk3t1600.jpg?1582480128",
+          "text": "",
           "altText": "Air carrier facility, Octane render + 3D-coat + photoshop."
         },
         {
           "type": "image",
-          "url": "https://cdna.artstation.com/p/assets/images/images/008/485/260/large/paul-chadeisson-testspeed-0187.jpg?1513089067",
-          "text": "",
-          "altText": "Air carrier facility, Octane render + 3D-coat + photoshop."
-        }
-      ]
-    },
-    {
-      "title": "Exoplanet",
-      "pages": [
-        {
-          "url": "https://cdna.artstation.com/p/assets/images/images/010/938/758/large/paul-chadeisson-testspeed-0221.jpg?1527032952",
-          "text": "Link to full gallery: https://www.artstation.com/artwork/WNGdD",
-          "altText": "Mysterious docking structure on an exoplanet."
-        },
-        {
-          "url": "https://cdnb.artstation.com/p/assets/images/images/010/938/757/large/paul-chadeisson-testspeed-0220b.jpg?1527032941",
-          "text": "How do they make things look so detailed and realistic? Wow. How do they make things look so detailed and realistic? Wow.",
-          "altText": "Mysterious docking structure on an exoplanet."
+          "url": "https://cdnb.artstation.com/p/assets/images/images/000/341/827/large/mathias-zamecki-foresthd.jpg?1443927830",
+          "text": "A forest painting by Mathias Zamęcki.",
+          "altText": "A forest painting by Mathias Zamęcki."
         }
       ]
     }
