@@ -13,8 +13,6 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class GalleryManagerService {
 
-  // stores gallery and tracks it state
-
   private _gallery: Gallery;
 
   private readonly _currentPage = new BehaviorSubject<Page>(new Page());
@@ -27,10 +25,6 @@ export class GalleryManagerService {
   get gallery(): Gallery {
     return this._gallery;
   }
-
-  // set currentPage(page: Page) {
-  //   this._currentPage.next(page);
-  // }
 
   nsfwWarningModalId = 'nsfw-warning-modal';
 
@@ -45,7 +39,12 @@ export class GalleryManagerService {
     this.goToLatestChapter();
   }
 
-  // NAVIGATION
+  private setPage(chapterNumber, pageNumber) {
+    let chapter = this.gallery.getChapter(chapterNumber)
+    this._currentPage.next(chapter.getPage(pageNumber));
+  }
+
+  // CHAPTER/PAGE NAVIGATION
 
   goToLatestChapter() {
     const latestChapterNumber = this.gallery.getLatestChapterNumber();
@@ -98,12 +97,6 @@ export class GalleryManagerService {
       var previousPageNum = this.currentPage.pageNumber - 1;
       this.goToPage(previousPageNum);
     }
-  }
-
-  private setPage(chapterNumber, pageNumber) {
-    let chapter = this.gallery.getChapter(chapterNumber)
-    // this.currentPage = chapter.getPage(pageNumber);
-    this._currentPage.next(chapter.getPage(pageNumber));
   }
 
   // BOOLEAN

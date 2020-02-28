@@ -8,7 +8,21 @@ Works on a variety of device types, including mobile, tablet, and desktop.
 
 ## Getting Started
 
-Be sure to fork project and work off the forked version before custimizing your site. You'll need to do this in order to publish your changes to your own Github pages site.
+Be sure to fork the project and work off the forked version before custimizing your site. You'll need to do this in order to publish your changes to your own Github pages site.
+
+## Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Gallery.json
+
+As mentioned earlier, the site's is controlled through a `gallery.json` file, said file is located in the `src/data` folder of the project.
+The ordering of your content will depend on the order of the chapters you create in the chapters block, and the pages work in the same way.
+Note that for each page specifying a 'type' key is optional for the time being; however for future iteractions of this project other types of content will be capable of being displayed (e.g. videos). 
 
 ## Building and Publishing
 
@@ -21,15 +35,5 @@ If you're using Windows and want to to publish your changes to the live version 
 
 In your project settings page make sure you're on the `gh-pages` branch, then visit your website from your Github pages url.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 

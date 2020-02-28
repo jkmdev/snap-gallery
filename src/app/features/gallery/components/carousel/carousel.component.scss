@@ -75,7 +75,6 @@
     overflow: scroll;
     .image {
         width: 1000px;
-        // background-size: auto;
         background-size: cover; 
     }
 }
@@ -84,7 +83,6 @@
     @extend %font-md;
     height: 500px;
     width: 100%;
-    margin-bottom: $textbar-height;
     padding: 0px 120px 0px 120px;
     background-image: url("https://wallpapercave.com/wp/MTFGvNm.jpg");
     background-size: cover; 

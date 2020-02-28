@@ -62,8 +62,6 @@ export class NavbarComponent {
     }
   }
 
-  // update navbar when current page changes
-
   updateChapterNumber() {
     this.galleryManagerService.goToChapter(this.selectedChapter);
   }
@@ -107,39 +105,22 @@ export class NavbarComponent {
 
     var zoomIconElem = document.getElementById("zoom-icon");
     var carouselElem = document.getElementsByClassName("carousel")[0];
-    var screenImage = carouselElem.getElementsByClassName('image')[0];
 
     var zoomedInHtml = '<i class="fa fa-search-plus"></i>';
     var zoomedOutHtml = '<i class="fa fa-search-minus"></i>';
 
-    // Create new offscreen image to test
-    // var theImage = new Image();
-    // theImage.src = screenImage.src;
-
-    // Get accurate measurements from that.
-    // var imageWidth = theImage.width;
-    // var imageHeight = theImage.height;
-
-    // console.log(imageWidth);
-    // console.log(imageHeight);
-
     if (zoomIconElem.innerHTML === zoomedOutHtml) {
       zoomIconElem.innerHTML = zoomedInHtml;
-      
-      // console.log(screenImage);
       carouselElem.classList.remove("zoomed-in-img");
-      // screenImage.setAttribute("style", "width: 5000px;");
     } else {
       zoomIconElem.innerHTML = zoomedOutHtml;
       carouselElem.classList.add("zoomed-in-img");
     }
 
-    
   }
 
   zoomOutImage(e) {
     var element = document.getElementsByClassName("carousel")[0];
-    console.log(element);
     element.classList.add("zoomed-out-img");
     var element = document.getElementsByClassName("carousel")[0];
   }

@@ -1,15 +1,12 @@
-import { Component, OnInit, Input, Renderer2, ElementRef, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, Renderer2, ElementRef } from '@angular/core';
 import { ModalService } from '../../services/modal.service';
-import { ConstantPool } from '@angular/compiler';
 
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss']
 })
-export class ModalComponent implements OnInit, OnChanges {
-
-  // https://github.com/angular/components/blob/master/src/cdk/a11y/focus-trap/focus-trap.ts
+export class ModalComponent implements OnInit {
 
   @Input() id: string;
   private modal: any;
@@ -40,10 +37,6 @@ export class ModalComponent implements OnInit, OnChanges {
       // add self (this modal instance) to the modal service so it's accessible from controllers
       this.modalService.add(this);
       this.close();
-  }
-
-  ngOnChanges() {
-
   }
 
   // remove self from modal service when component is destroyed

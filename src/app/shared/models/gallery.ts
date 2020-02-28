@@ -1,9 +1,3 @@
-/**
- * class Gallery
- *
- * Purpose: Load gallery with pages, keeps track of what chapters are in the gallery, defines the structure of the gallery
- */
-
 import { Chapter } from './chapter';
 import { Page } from './page';
 
@@ -47,10 +41,8 @@ export class Gallery {
         ++this.chapterAmount;
         chapter.chapterNumber = this.chapterAmount;
         this.chapters.push(chapter);
-        console.log(this.chapters);
     }
 
-    // PARSING SERVICE START
     addPostsToGallery(posts) {
         posts.forEach(post => {
             const tags = post.tags;
@@ -106,7 +98,6 @@ export class Gallery {
         return pageNumber;
     }
 
-    // PARSING SERVICE END
     getChapter(chapterNumber: number) {
         if (typeof chapterNumber === 'string') {
             chapterNumber = parseInt(chapterNumber, 10);

@@ -1,27 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
-/* VARIABLES */
+/* COLOURS */
 
 $primary-color: #000000;
 $secondary-color: #ffffff;
 $accent-color: #b92b27;
-$accent-color-transparent: rgba(0,85,255, 0.2);
-
-$font-primary-color: #F0F0F0;
-
-$font-styled: 'Source Code Pro', monospace;
-
-$font-size-medium: 16px;
-$font-size-large: 28px;
-
-$viewport-height: 100vh;
-
-$navbar-side-margin: 30px;
-$link-margins: 50px;
-
-$navbar-height: 5vh; // delete this later
-$carousel-height: 85vh; // delete this later
-$textbar-height: 10vh; // delete this later
 
 /* BREAKPOINTS */
 
@@ -29,11 +12,41 @@ $view-modal-breakpoint: 1500px;
 $y-mobile-breakpoint: 600px;
 $x-mobile-breakpoint: 800px;
 
+/* FONT */
+
+$font-primary-color: #F0F0F0;
+$font-styled: 'Source Code Pro', monospace;
+
+html {
+    font-size: calc(11px + .35vw);
+}
+
+body {
+    font-family: $font-styled;
+}
+
+%font-xl {
+    font-size: 3rem;
+}
+
+%font-lg {
+    font-size: 1.8rem;
+}
+
+%font-md {
+    font-size: 1.5rem;
+    @media screen and (max-height: $y-mobile-breakpoint) {
+        font-size: 1rem;
+    }
+}
+
+%font-sm {
+    font-size: 1.2rem;
+}
+
 /* X-ORIENTED MOBILE RESPONSIVENESS */
 
 @media screen and (max-width: $x-mobile-breakpoint) {
-
-    // navbar 
 
     header {
         padding: 10px !important;
@@ -63,45 +76,10 @@ $x-mobile-breakpoint: 800px;
     }
 }
 
-/* FONT */
-
-html {
-    font-size: calc(11px + .35vw);
-}
-
-body {
-    font-family: $font-styled;
-}
-
-%font-xl {
-    font-size: 3rem;
-}
-
-%font-lg {
-    font-size: 1.8rem;
-}
-
-%font-md {
-    font-size: 1.5rem;
-    @media screen and (max-height: $y-mobile-breakpoint) {
-        font-size: 1rem;
-    }
-}
-
-%font-sm {
-    font-size: 1.2rem;
-}
-
 /* ACCESSIBILITY */
 
 %keyboard-focus-style {
     border: 1px solid white;
-}
-
-%primary-button {
-    @extend %font-sm;
-    background-color: $primary-color;
-    border: none;      
 }
 
 *:focus {
@@ -132,9 +110,7 @@ div, select {
 /* OVERALL LAYOUT POSITIONING */
 
 main {
-
     height: 100vh;
-
 }
 
 /* COMMON */

@@ -1,10 +1,3 @@
-/**
- * class GalleryComponent
- *
- * Purpose: Passes current page information to child components, handles their outputs
- *    triggers gallery state changes based off events
- */
-
 import { Component } from '@angular/core';
 
 import { ModalService } from '../../shared/services/modal.service';

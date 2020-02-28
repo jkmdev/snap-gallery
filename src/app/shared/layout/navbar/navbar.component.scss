@@ -46,14 +46,12 @@ header {
     }
 
     .link button {
-        @extend %primary-button;   
         float: right; 
         margin: 1px;
     }
     
     .mobile-icons {
         button {
-            @extend %primary-button;  
             font-size: 2.3rem;
         }
         button:not(:last-child) {

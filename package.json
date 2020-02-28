@@ -1,6 +1,6 @@
 {
   "name": "snap-gallery",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,7 +10,7 @@
     "update-style": "node src/scripts/test.js",
     "build": "ng build --prod --output-path dist --base-href='https://jkmdev.github.io/snap-gallery/'",
     "publish": "sudo ngh --no-silent",
-    "publish-on-windows": "sudo ngh --no-silent",
+    "publish-on-windows": "ngh --no-silent",
     "git-r-done": "npm run build && npm run publish",
     "git-r-done-on-windows": "npm run build && npm run publish-on-windows"
   },
