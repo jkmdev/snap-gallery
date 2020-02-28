@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Renderer2, ElementRef } from '@angular/core';
+
 import { ModalService } from '../../services/modal.service';
 
 @Component({
