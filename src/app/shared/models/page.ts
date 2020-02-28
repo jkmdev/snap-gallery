@@ -1,4 +1,5 @@
 export class Page {
+
     url: string;
     chapterNumber: number;
     pageNumber: number;
@@ -8,6 +9,7 @@ export class Page {
     commentary: string; 
     flags: Array<string>;
     altText: string;
+
     constructor(
         url?: string,
         chapterNumber?: number,
@@ -28,4 +30,5 @@ export class Page {
         this.altText = altText;
         this.pageIndex = this.pageNumber - 1;
     }
+    
 }

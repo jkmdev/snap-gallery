@@ -1,14 +1,7 @@
-/**
- * class Chapter
- *
- * Purpose: Keeps track of what pages are in the chapter, defines the structure of the chapter
- */
-
 import { Page } from './page';
 
 export class Chapter {
 
-    // static pageCount: number = 0;
     pageAmount: number;
     title: string;
     chapterNumber: number;
@@ -49,4 +42,5 @@ export class Chapter {
     getPage(pageNumber) {
         return this.pages[pageNumber - 1];
     }
+    
 }

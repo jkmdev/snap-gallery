@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
 import { Page } from '../../shared/models/page';
-import { Chapter } from '../../shared/models/chapter';
 import { Gallery } from '../../shared/models/gallery';
 import { HttpErrorResponse } from '@angular/common/http';
 
@@ -25,8 +24,6 @@ export class GalleryManagerService {
   get gallery(): Gallery {
     return this._gallery;
   }
-
-  nsfwWarningModalId = 'nsfw-warning-modal';
 
   error: HttpErrorResponse;
 
