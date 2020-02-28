@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { Chapter } from '../../models/chapter';
 import { Page } from 'src/app/shared/models/page';
 
@@ -23,15 +24,8 @@ export class NavbarComponent {
   sectionSelectTitle: string;
   pageSelectTitle: string;
   title: string;
-  links: any[] = [
-    {
-      name: 'About'
-    }
-  ];
   galleryJSON = galleryJSON;
   aboutModalId = 'about-modal';
-  audioWarningModalId = 'audio-warning-modal';
-  videoWarningModalId = 'video-warning-modal';
 
   pageNumbers: number[];
 
@@ -45,8 +39,7 @@ export class NavbarComponent {
     this.chapters = galleryManagerService.returnAllGalleryChapters();
     galleryManagerService.currentPage$.subscribe(
       newPage => this.updateCurrentPage(newPage),
-      err => console.error('Observer got an error: ' + err),
-      () => console.log('Observer got a complete notification')
+      err => console.error("Error obtaining updated page:" + err)
     );
   }
 
@@ -83,11 +76,13 @@ export class NavbarComponent {
   }
 
   setSkipContentStyle() {
-    document.getElementById('skip-content-link').setAttribute("style", "width: 200px; border: 1px solid blue;");
+    document.getElementById('skip-content-link')
+            .setAttribute("style", "width: 200px; border: 1px solid blue;");
   }
 
   removeSkipContentStyle() {
-    document.getElementById('skip-content-link').setAttribute("style", "width: 0px; color:red;");
+    document.getElementById('skip-content-link')
+            .setAttribute("style", "width: 0px; color:red;");
   }
 
   skipContent() {
@@ -102,7 +97,6 @@ export class NavbarComponent {
   }
 
   toggleImageZoom() {
-
     var zoomIconElem = document.getElementById("zoom-icon");
     var carouselElem = document.getElementsByClassName("carousel")[0];
 
@@ -116,7 +110,6 @@ export class NavbarComponent {
       zoomIconElem.innerHTML = zoomedOutHtml;
       carouselElem.classList.add("zoomed-in-img");
     }
-
   }
 
   zoomOutImage(e) {

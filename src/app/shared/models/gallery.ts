@@ -24,7 +24,6 @@ export class Gallery {
             })
       
         });
-
     }
 
     private addNewChapter(title: string) {
