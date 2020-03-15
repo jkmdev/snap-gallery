@@ -20,7 +20,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Gallery.json
 
-As mentioned earlier, the site's is controlled through a `gallery.json` file, said file is located in the `src/data` folder of the project.
+As mentioned earlier, the site is controlled through a `gallery.json` file, said file is located in the `src/data` folder of the project.
 The ordering of your content will depend on the order of the chapters you create in the chapters block, and the pages work in the same way.
 Note that for each page specifying a 'type' key is optional for the time being; however for future iteractions of this project other types of content will be capable of being displayed (e.g. videos). 
 
